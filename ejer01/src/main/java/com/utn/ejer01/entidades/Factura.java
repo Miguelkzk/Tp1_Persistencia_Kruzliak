@@ -17,6 +17,7 @@ import java.util.Date;
 @Builder
 @Table(name= "factura")
 public class Factura extends BaseEntidad {
+    private String formaPago;
     private int numero;
     private LocalDate fecha;
     private double descuento;

@@ -92,6 +92,7 @@ public class Ejer01Application {
 			pedido1.agregarDetalle(detalle1);
 			pedido1.agregarDetalle(detalle2);
 			Factura factura1=Factura.builder()
+					.formaPago("Efectivo")
 					.numero(1213)
 					.fecha(LocalDate.now())
 					.descuento(10)
@@ -99,6 +100,7 @@ public class Ejer01Application {
 					.build();
 			pedido1.setFactura(factura1);
 			Factura factura2=Factura.builder()
+					.formaPago("Tarjeta")
 					.numero(2113)
 					.fecha(LocalDate.now())
 					.descuento(20)
@@ -129,7 +131,7 @@ public class Ejer01Application {
 			clienteRepository.save(cliente1);
 			clienteRepository.save(cliente2);
 
-		//consultas
+		//consultas de ejemplo
 			System.out.println("Cliente 1");
 		Cliente clienterecuperado=clienteRepository.findById(cliente1.getId()).orElse(null);
 		if(clienterecuperado!=null){
@@ -138,6 +140,7 @@ public class Ejer01Application {
 			System.out.println(("Telefono: "+clienterecuperado.getTelefono()));
 			System.out.println(("Email: "+clienterecuperado.getEmail()));
 			clienterecuperado.mostrarDomicilios();
+			clienterecuperado.mostrarPedidos();
 		}
 			System.out.println("Cliente 2 ");
 			Cliente clienterecuperado1=clienteRepository.findById(cliente2.getId()).orElse(null);

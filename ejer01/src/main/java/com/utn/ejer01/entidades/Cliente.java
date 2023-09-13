@@ -48,4 +48,12 @@ public class Cliente extends BaseEntidad {
       pedidos.add(pedi);
    }
 
+   public void mostrarPedidos(){
+      System.out.println("Pedidos de " +nombre+" "+apellido+ ":");
+      for (Pedido pedido: pedidos){
+         System.out.println("Estado: " +pedido.getEstado()+ ",fecha: "+pedido.getFecha()+", tipo envio " +pedido.getTipoEnvio() + " Total: "+ pedido.getTotal());
+      }
+   }
+
+
 }
